@@ -1,0 +1,11 @@
+﻿@model List<GameList.Models.Game>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Raw CSV Game Library</h2>
+@Html.ActionLink("Click here to go back", "List", "Game")
+@foreach (GameList.Models.Game n in Model)
+{
+<p>@Html.DisplayFor(m => n.Name), @Html.DisplayFor(m => n.Developer), @Html.DisplayFor(m => n.Genre), @Html.DisplayFor(m => n.ReleaseDate.Date), @Html.DisplayFor(m => n.Score)</p>
+}

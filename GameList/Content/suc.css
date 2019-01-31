@@ -1,0 +1,12 @@
+﻿body {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+}
+
+.Wrapper {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    border: 2px solid #b66020;
+}

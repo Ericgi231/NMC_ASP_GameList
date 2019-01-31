@@ -1,0 +1,50 @@
+﻿@model List<GameList.Models.Game>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Game Library</h2>
+@Html.ActionLink("Click here for raw CSV data", "List", "Game", new { raw = "true"}, null)
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Developer</th>
+        <th>Genre</th>
+        <th>Release Date</th>
+        <th>Score*</th>
+    </tr>
+    @foreach (GameList.Models.Game n in Model)
+    {
+    <tr>
+        <td>@Html.DisplayFor(m => n.Name)</td>
+        <td>@Html.DisplayFor(m => n.Developer)</td>
+        <td>@Html.DisplayFor(m => n.Genre)</td>
+        <td>@Html.DisplayFor(m => n.ReleaseDate.Date)</td>
+        @switch (n.Score)
+        {
+            case 0:
+                <td style="color:red;">@Html.DisplayFor(m => n.Score)</td>
+                break;
+            case 1:
+            case 2:
+            case 3:
+                <td style="color:orange;">@Html.DisplayFor(m => n.Score)</td>
+                break;
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+                <td style="color:yellow;">@Html.DisplayFor(m => n.Score)</td>
+                break;
+            case 8:
+            case 9:
+            case 10:
+                <td style="color:green;">@Html.DisplayFor(m => n.Score)</td>
+                break;
+        }
+    </tr>
+    }
+</table>
+<br />
+<p><small>*score must be entered from the rate games tab.</small></p>
+

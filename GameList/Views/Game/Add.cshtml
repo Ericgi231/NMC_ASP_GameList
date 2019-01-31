@@ -1,0 +1,25 @@
+﻿@model GameList.Models.Game
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add New Game To The List</h2>
+<form method="post">
+    <p>
+        Name:
+        <input type="text" name="name" id="name" required/>
+    </p>
+    <p>
+        Genre:
+        <input type="text" name="genre" id="genre" required/>
+    </p>
+    <p>
+        Developer:
+        <input type="text" name="developer" id="developer" required/>
+    </p>
+    <p>
+        Release Date:
+        <input type="date" name="releaseDate" id="releaseDate" required/>
+    </p> 
+    <input type="submit" name="submit" value="Add Game" />
+</form>

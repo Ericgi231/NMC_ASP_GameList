@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Game Added";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/suc.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="Wrapper">
+        <h2>Game Added Successfully!</h2>
+        <p>@ViewBag.Message</p>
+        @Html.ActionLink("View List", "List", "Game")
+    </div>
+</body>
+</html>

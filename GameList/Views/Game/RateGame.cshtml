@@ -1,0 +1,19 @@
+﻿@model GameList.Models.Game
+@{
+    ViewBag.Title = "RateGame";
+}
+
+<h2>Rate Game</h2>
+<p>Please enter the name of the game you wish to rate.</p>
+<p>Make sure the game exists in the database before rating it.</p>
+<form action="" method="post">
+    <label for="gameName">Name of Game</label><br />
+    <input type="text" name="gameName" id="gameName" required/><br /><br />
+    <label for="score">Score (1-10)</label><br />
+    <input type="number" name="score" id="score" max="10" min="1" value="5" required/><br /><br />
+    <input type="submit" name="submit" value="Select" />
+</form>
+@if (Model != null)
+{
+    <h2>You gave @Model.Name a score of @Model.Score</h2>
+}
